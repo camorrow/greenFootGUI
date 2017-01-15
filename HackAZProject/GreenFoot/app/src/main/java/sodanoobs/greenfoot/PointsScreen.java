@@ -43,8 +43,8 @@ public class PointsScreen extends AppCompatActivity {
 
         SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
         distance =  prefs.getFloat("distance", 0.0f);
-        TextView tt = (TextView) findViewById(R.id.congratulationsText);
-        tt.setText(Float.toString(distance));
+//        TextView tt = (TextView) findViewById(R.id.congratulationsText);
+//        tt.setText(Float.toString(distance));
         if(passengers == -1)
             points = pointCalculation(travelConstant, distance);
         else
