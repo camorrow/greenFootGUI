@@ -1,6 +1,7 @@
 package sodanoobs.greenfoot;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -29,6 +30,11 @@ public class TransitScreen extends AppCompatActivity {
                 distance_travelled += lastloc.distanceTo(location);
                 TextView tt = (TextView) findViewById(R.id.currentDistance);
                 tt.setText(Float.toString(distance_travelled));
+                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putFloat("distance", distance_travelled);
+                editor.commit();
+
                 lastloc = location;
 
                 //TODO -- Barney says what should happen
@@ -47,6 +53,7 @@ public class TransitScreen extends AppCompatActivity {
                 return;
             }
         };
+
         lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, (long)10000, (float)0, listener);
     }
 
