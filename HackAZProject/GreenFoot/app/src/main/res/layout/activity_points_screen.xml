@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_points_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="sodanoobs.greenfoot.PointsScreen"
+    android:background="#E5E5FF">
+
+    <TextView
+        android:text="Congratulations!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/congratulationsText"
+        android:textColor="#009900"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="You've earned a total of"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/congratulationsText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:id="@+id/earnText" />
+
+    <TextView
+        android:text="100 points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/earnText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:id="@+id/pointsText"
+        android:textColor="#0000FF"
+        android:textSize="40sp" />
+
+    <Button
+        android:text="Take another trip!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/returnButton"
+        android:backgroundTint="#009900"
+        android:onClick="returnToStart" />
+
+    <TextView
+        android:text="When driving a large personal vehicle, an average of 300 grams of carbon per kilometer are burned. One point is awarded for every gram of carbon you saved by traveling how you did! Whether you helped the environment by carpooling, biking, or just driving a more efficient car, thank you for helping to do your part!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/explanationText"
+        android:layout_above="@+id/returnButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="36dp" />
+</RelativeLayout>
