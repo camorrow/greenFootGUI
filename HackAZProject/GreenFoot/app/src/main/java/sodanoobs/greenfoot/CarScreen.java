@@ -28,7 +28,15 @@ public class CarScreen extends AppCompatActivity {
         CheckBox electricBox = (CheckBox)findViewById(R.id.electricBox);
         EditText passengerField = (EditText) findViewById(R.id.passengersField);
         Intent intent = new Intent(CarScreen.this, PointsScreen.class);
-        int passengers = Integer.parseInt(passengerField.getText().toString());
+        int passengers = 0;
+        try{
+            passengers = Integer.parseInt(passengerField.getText().toString());
+        } catch(Exception e){
+            TextView errorMessage = (TextView) findViewById(R.id.errorText);
+            errorMessage.setText("Remember to enter the number of other passengers! If you traveled alone, type '0'");
+            return;
+        }
+
 
         if(electricBox.isChecked())
             intent.putExtra("travelConstant", 80);
@@ -42,7 +50,15 @@ public class CarScreen extends AppCompatActivity {
         CheckBox electricBox = (CheckBox)findViewById(R.id.electricBox);
         EditText passengerField = (EditText) findViewById(R.id.passengersField);
         Intent intent = new Intent(CarScreen.this, PointsScreen.class);
-        int passengers = Integer.parseInt(passengerField.getText().toString());
+        int passengers = 0;
+
+        try{
+            passengers = Integer.parseInt(passengerField.getText().toString());
+        } catch(Exception e){
+            TextView errorMessage = (TextView) findViewById(R.id.errorText);
+            errorMessage.setText("Remember to enter the number of other passengers! If you traveled alone, type '0'");
+            return;
+        }
 
         if(electricBox.isChecked())
             intent.putExtra("travelConstant", 80);
@@ -56,7 +72,14 @@ public class CarScreen extends AppCompatActivity {
         CheckBox electricBox = (CheckBox)findViewById(R.id.electricBox);
         EditText passengerField = (EditText) findViewById(R.id.passengersField);
         Intent intent = new Intent(CarScreen.this, PointsScreen.class);
-        int passengers = Integer.parseInt(passengerField.getText().toString());
+        int passengers = 0;
+        try{
+            passengers = Integer.parseInt(passengerField.getText().toString());
+        } catch(Exception e){
+            TextView errorMessage = (TextView) findViewById(R.id.errorText);
+            errorMessage.setText("Remember to enter the number of other passengers! If you traveled alone, type '0'");
+            return;
+        }
 
         if(electricBox.isChecked())
             intent.putExtra("travelConstant", 80);

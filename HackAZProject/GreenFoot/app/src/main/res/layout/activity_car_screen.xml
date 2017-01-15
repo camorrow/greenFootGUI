@@ -74,4 +74,13 @@
         android:backgroundTint="#FF9900"
         android:onClick="largeCarToPoints"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/errorText"
+        android:textColor="#FF0000"
+        android:textAlignment="center" />
+
 </RelativeLayout>

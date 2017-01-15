@@ -31,7 +31,6 @@
         android:id="@+id/earnText" />
 
     <TextView
-        android:text="100 points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/earnText"
