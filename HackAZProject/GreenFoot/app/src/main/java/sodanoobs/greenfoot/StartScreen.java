@@ -35,7 +35,8 @@ public class StartScreen extends AppCompatActivity {
                 }
                 else{
 
-                    startActivity(new Intent(StartScreen.this, TransitScreen.class));
+                    startActivity(new Intent(StartScreen.this, TransitScreen.class).putExtra("lastloc", lastloc ));
+
                     distance_travelled += lastloc.distanceTo(location);
                     TextView tt = (TextView) findViewById(R.id.startTitle);
                     tt.setText(Float.toString(distance_travelled));
