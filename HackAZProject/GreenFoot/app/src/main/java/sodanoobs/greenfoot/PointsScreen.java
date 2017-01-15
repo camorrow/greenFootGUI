@@ -2,6 +2,7 @@ package sodanoobs.greenfoot;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,8 +41,10 @@ public class PointsScreen extends AppCompatActivity {
         travelConstant = getIntent().getIntExtra("travelConstant", 0);
         passengers = getIntent().getIntExtra("passengers", -1);
 
-        SharedPreferences prefs= getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
         distance =  prefs.getFloat("distance", 0.0f);
+        TextView tt = (TextView) findViewById(R.id.congratulationsText);
+        tt.setText(Float.toString(distance));
         if(passengers == -1)
             points = pointCalculation(travelConstant, distance);
         else

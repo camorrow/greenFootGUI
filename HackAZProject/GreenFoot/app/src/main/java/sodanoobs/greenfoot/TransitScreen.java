@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,10 +18,12 @@ public class TransitScreen extends AppCompatActivity {
     float distance_travelled;
     LocationManager lm;
     LocationListener listener;
+    TransitScreen ts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transit_screen);
+        ts = this;
         lastloc = (Location) getIntent().getExtras().getParcelable("lastloc");
 
         lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -30,7 +33,7 @@ public class TransitScreen extends AppCompatActivity {
                 distance_travelled += lastloc.distanceTo(location);
                 TextView tt = (TextView) findViewById(R.id.currentDistance);
                 tt.setText(Float.toString(distance_travelled));
-                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ts);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putFloat("distance", distance_travelled);
                 editor.commit();
