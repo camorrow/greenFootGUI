@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.CheckBox;
+import android.widget.EditText;
 
 public class CarScreen extends AppCompatActivity {
 
@@ -23,12 +25,45 @@ public class CarScreen extends AppCompatActivity {
 
 
     public void smallCarToPoints(View v){
-        startActivity(new Intent(CarScreen.this, PointsScreen.class));
+        CheckBox electricBox = (CheckBox)findViewById(R.id.electricBox);
+        EditText passengerField = (EditText) findViewById(R.id.passengersField);
+        Intent intent = new Intent(CarScreen.this, PointsScreen.class);
+        int passengers = Integer.parseInt(passengerField.getText().toString());
+
+        if(electricBox.isChecked())
+            intent.putExtra("travelConstant", 80);
+        else
+            intent.putExtra("travelConstant", 175);
+
+        intent.putExtra("passengers", passengers);
+        startActivity(intent);
     }
     public void averageCarToPoints(View v){
-        startActivity(new Intent(CarScreen.this, PointsScreen.class));
+        CheckBox electricBox = (CheckBox)findViewById(R.id.electricBox);
+        EditText passengerField = (EditText) findViewById(R.id.passengersField);
+        Intent intent = new Intent(CarScreen.this, PointsScreen.class);
+        int passengers = Integer.parseInt(passengerField.getText().toString());
+
+        if(electricBox.isChecked())
+            intent.putExtra("travelConstant", 80);
+        else
+            intent.putExtra("travelConstant", 215);
+
+        intent.putExtra("passengers", passengers);
+        startActivity(intent);
     }
     public void largeCarToPoints(View v) {
-        startActivity(new Intent(CarScreen.this, PointsScreen.class));
+        CheckBox electricBox = (CheckBox)findViewById(R.id.electricBox);
+        EditText passengerField = (EditText) findViewById(R.id.passengersField);
+        Intent intent = new Intent(CarScreen.this, PointsScreen.class);
+        int passengers = Integer.parseInt(passengerField.getText().toString());
+
+        if(electricBox.isChecked())
+            intent.putExtra("travelConstant", 80);
+        else
+            intent.putExtra("travelConstant", 300);
+
+        intent.putExtra("passengers", passengers);
+        startActivity(intent);
     }
 }
